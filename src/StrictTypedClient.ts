@@ -203,7 +203,7 @@ export default class StrictTypedClient {
       { guild_id: guildId },
       'PATCH',
       AutoproxySettings,
-      AutoproxySettings.partial().encode(data),
+      z.object(AutoproxySettings.shape).partial().encode(data),
       'generic_update',
       options
     )
